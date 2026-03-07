@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart and Secure Hotel Reservation Platform</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <h1>Welcome to Smart & Secure Hotel</h1>
+  <p>Your comfort is our priority</p>
+</header>
+
+<!-- Hotel Info Section -->
+<section class="info">
+  <h2>Our Rooms & Amenities</h2>
+  <ul>
+    <li>Single, Double, Deluxe, Suite Rooms</li>
+    <li>Free Wi-Fi</li>
+    <li>Swimming Pool & Gym</li>
+    <li>24/7 Room Service</li>
+    <li>Restaurant & Cafe</li>
+  </ul>
+</section>
+
+<!-- Booking Form Section -->
+<section class="booking">
+  <h2>Book Your Room</h2>
+  <input type="text" id="name" placeholder="Customer Name">
+  <select id="room">
+    <option value="">Select Room</option>
+    <option>Single</option>
+    <option>Double</option>
+    <option>Deluxe</option>
+    <option>Suite</option>
+  </select>
+  <button onclick="bookRoom()">Book Room</button>
+</section>
+
+<!-- Search & Sort Section -->
+<section class="search-sort">
+  <h2>Search & Sort Bookings</h2>
+  <input type="text" id="searchName" placeholder="Search Customer">
+  <button onclick="searchBooking()">Search</button>
+  <button onclick="sortBookings()">Sort Bookings</button>
+  <button onclick="showBookings()">Show All Bookings</button>
+</section>
+
+<!-- Booking History Section -->
+<section class="history">
+  <h2>Booking History</h2>
+  <div id="output"></div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Contact: info@smart-hotel.com | Phone: +91-1234567890</p>
+  <p>&copy; 2026 Smart Hotel Reservation</p>
+</footer>
+
+<script src="script-dsa.js"></script>
+</body>
+</html>
