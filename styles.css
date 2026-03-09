@@ -1,20 +1,19 @@
-/* General Styles */
 body{
-  font-family: Arial;
-  background:#f2f2f2;
-  margin:0;
-  padding:0;
+  font-family: Arial; /* CO1: Typography essentials */
+  background:#f2f2f2; /* CO1: Color representations */
+  margin:0;           /* CO1: Box model basics */
+  padding:0;          /* CO1: Box model basics */
   text-align:center;
 }
 
 header{
   background:#4CAF50;
   color:white;
-  padding:20px 0;
+  padding:20px 0;    /* CO1: Foundational spacing */
 }
 
 header p{
-  font-size:16px;
+  font-size:16px;    /* CO1: Typography essentials */
 }
 
 /* Sections */
@@ -25,7 +24,7 @@ section{
   margin:20px auto;
   padding:20px;
   border-radius:10px;
-  box-shadow:0 0 10px gray;
+  box-shadow:0 0 10px gray; /* CO2: Styling for interactivity / visual enhancement */
 }
 
 h2{
@@ -46,13 +45,13 @@ ul li{
 input, select{
   width:90%;
   padding:8px;
-  margin:8px 0;
+  margin:8px 0;  /* CO2: Form layout & spacing */
 }
 
 button{
   padding:8px 15px;
   margin:5px;
-  background:#4CAF50;
+  background:#4CAF50; /* CO2: Styling for interactivity */
   color:white;
   border:none;
   cursor:pointer;
