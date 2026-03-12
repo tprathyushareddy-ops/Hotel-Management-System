@@ -1,171 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Smart & Secure Hotel Management Platform</title>
-
-<style>
-body{
-font-family: Arial;
-background:#f4f4f4;
-text-align:center;
-}
-
-h1{
-background:#2c3e50;
-color:white;
-padding:15px;
-}
-
-button{
-padding:10px;
-margin:5px;
-background:#3498db;
-color:white;
-border:none;
-cursor:pointer;
-}
-
-table{
-margin:auto;
-border-collapse:collapse;
-width:70%;
-background:white;
-}
-
-th,td{
-border:1px solid black;
-padding:10px;
-}
-
-th{
-background:#2ecc71;
-}
-</style>
+<title>Smart and Secure Hotel Reservation Platform</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- Header -->
+<header>
 <h1>Smart & Secure Hotel Reservation Platform</h1>
+<p>Your comfort is our priority</p>
+</header>
 
-<br>
+<!-- Hotel Information -->
+<section class="info">
 
-<button onclick="displayRooms()">Display Rooms</button>
+<h2>Our Rooms & Amenities</h2>
+
+<ul>
+<li>Single Room</li>
+<li>Double Room</li>
+<li>Deluxe Room</li>
+<li>Suite Room</li>
+<li>Free WiFi</li>
+<li>Swimming Pool</li>
+<li>Gym</li>
+<li>24/7 Room Service</li>
+<li>Restaurant & Cafe</li>
+
+</ul>
+
+</section>
+
+<!-- Booking Section -->
+<section class="booking">
+
+<h2>Book Your Room</h2>
+
+<input type="text" id="name" placeholder="Enter Customer Name">
+
+<select id="room">
+
+<option value="">Select Room</option>
+<option value="Single">Single</option>
+<option value="Double">Double</option>
+<option value="Deluxe">Deluxe</option>
+<option value="Suite">Suite</option>
+
+</select>
+
 <button onclick="bookRoom()">Book Room</button>
-<button onclick="cancelRoom()">Cancel Booking</button>
-<button onclick="searchRoom()">Search Room</button>
-<button onclick="sortRooms()">Sort By Price</button>
 
-<br><br>
+</section>
 
-<table id="roomTable">
-<tr>
-<th>Room No</th>
-<th>Type</th>
-<th>Price</th>
-<th>Status</th>
-</tr>
-</table>
+<!-- Search & Sort Section -->
+<section class="search-sort">
 
-<script>
+<h2>Search & Sort Bookings</h2>
 
-let rooms = [
-{number:101,type:"AC",price:3000,booked:false},
-{number:102,type:"Non AC",price:1500,booked:false},
-{number:103,type:"Deluxe",price:5000,booked:false},
-{number:104,type:"Suite",price:7000,booked:false}
-];
+<input type="text" id="searchName" placeholder="Search Customer">
 
-function displayRooms(){
+<button onclick="searchBooking()">Search</button>
 
-let table=document.getElementById("roomTable");
-table.innerHTML=`<tr>
-<th>Room No</th>
-<th>Type</th>
-<th>Price</th>
-<th>Status</th>
-</tr>`;
+<button onclick="sortBookings()">Sort Bookings</button>
 
-rooms.forEach(r=>{
-table.innerHTML+=`
-<tr>
-<td>${r.number}</td>
-<td>${r.type}</td>
-<td>${r.price}</td>
-<td>${r.booked?"Booked":"Available"}</td>
-</tr>`;
-});
+<button onclick="showBookings()">Show All Bookings</button>
 
-}
+</section>
 
-function bookRoom(){
+<!-- Booking History -->
+<section class="history">
 
-let num=prompt("Enter Room Number to Book");
+<h2>Booking History</h2>
 
-let room=rooms.find(r=>r.number==num);
+<div id="output"></div>
 
-if(room){
-if(!room.booked){
-room.booked=true;
-alert("Room booked successfully");
-}
-else{
-alert("Room already booked");
-}
-}
-else{
-alert("Room not found");
-}
+</section>
 
-displayRooms();
-}
+<!-- Footer -->
+<footer>
 
-function cancelRoom(){
+<p>Contact: info@smart-hotel.com | Phone: +91-1234567890</p>
 
-let num=prompt("Enter Room Number to Cancel Booking");
+<p>© 2026 Smart Hotel Reservation Platform</p>
 
-let room=rooms.find(r=>r.number==num);
+</footer>
 
-if(room){
-if(room.booked){
-room.booked=false;
-alert("Booking cancelled");
-}
-else{
-alert("Room was not booked");
-}
-}
-else{
-alert("Room not found");
-}
-
-displayRooms();
-}
-
-function searchRoom(){
-
-let num=prompt("Enter Room Number to Search");
-
-let room=rooms.find(r=>r.number==num);
-
-if(room){
-alert("Room "+room.number+" | "+room.type+" | Price:"+room.price+" | "+(room.booked?"Booked":"Available"));
-}
-else{
-alert("Room not found");
-}
-
-}
-
-function sortRooms(){
-
-rooms.sort((a,b)=>a.price-b.price);
-displayRooms();
-
-}
-
-displayRooms();
-
-</script>
+<!-- JavaScript file -->
+<script src="script-dsa.js"></script>
 
 </body>
 </html>
